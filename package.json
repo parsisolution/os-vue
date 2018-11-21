@@ -1,6 +1,6 @@
 {
   "name": "os-vue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Overlay Scrollbars Vue Component",
   "keywords": [
     "overlayscrollbars",
@@ -19,8 +19,9 @@
   "main": "dist/os-vue.min.js",
   "scripts": {
     "dev": "cross-env-shell \"rollup -c rollup.config.js\"",
+    "watch": "cross-env NODE_ENV=development npm run dev -- --watch",
     "build": "cross-env NODE_ENV=production npm run dev",
-    "watch": "cross-env NODE_ENV=development npm run dev -- --watch"
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
