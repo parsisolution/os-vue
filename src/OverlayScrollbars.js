@@ -17,11 +17,12 @@ export default {
     },
 
     mounted() {
-        if (!this.instance)
-            this.instance = OverlayScrollbars(this.$el, this.options);
+        this.instance = OverlayScrollbars(this.$el, this.options);
+        this.$emit('start', this.instance);
     },
 
     beforeDestroy() {
+        this.$emit('end', this.instance);
         this.instance.destroy();
         this.instance = null;
     },
