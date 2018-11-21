@@ -1,9 +1,11 @@
+import 'overlayscrollbars/js/OverlayScrollbars';
+
 export default {
     name: "overlay-scrollbars",
 
     data() {
         return {
-            oscroll: null,
+            instance: null,
         }
     },
 
@@ -15,13 +17,13 @@ export default {
     },
 
     mounted() {
-        if (!this.oscroll)
-            this.oscroll = OverlayScrollbars(this.$el, this.options);
+        if (!this.instance)
+            this.instance = OverlayScrollbars(this.$el, this.options);
     },
 
     beforeDestroy() {
-        this.oscroll.destroy();
-        this.oscroll = null;
+        this.instance.destroy();
+        this.instance = null;
     },
 
     render(h) {

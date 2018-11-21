@@ -38,6 +38,8 @@ Released under the <%= pkg.license %> License.`,
     ]
 }
 
+let external = ['overlayscrollbars/js/OverlayScrollbars'];
+
 let plugins = defaultPlugins();
 plugins.splice(2, 1);
 
@@ -48,20 +50,20 @@ productionESPlugins[2] = uglifyES();
 let configs = [
     {
         input: path.resolve(src, 'plugin.common.js'),
-        // external: Object.keys(dependencies),
+        external,
         plugins,
         output: [
             {
                 format: 'cjs',
                 exports: 'named',
-                name: 'OverlayScrollbars',
+                name: 'OverlayScrollbarsVue',
                 file: path.resolve(dist, name + '.common.js'),
                 sourcemap: true
             },
             {
                 format: 'umd',
                 exports: 'named',
-                name: 'OverlayScrollbars',
+                name: 'OverlayScrollbarsVue',
                 file: path.resolve(dist, name + '.js'),
                 sourcemap: true
             }
@@ -69,6 +71,7 @@ let configs = [
     },
     {
         input: path.resolve(src, 'plugin.js'),
+        external,
         plugins,
         output: {
             format: 'es',
@@ -78,10 +81,11 @@ let configs = [
     },
     {
         input: path.resolve(src, 'OverlayScrollbars.js'),
+        external,
         plugins,
         output: {
             format: 'umd',
-            name: 'OverlayScrollbars',
+            name: 'OverlayScrollbarsVue',
             file: path.resolve(base, 'overlay-scrollbars.js'),
             // sourcemap: true
         },
@@ -92,28 +96,31 @@ if (process.env.NODE_ENV === 'production') {
     let newConfigs = [
         {
             input: path.resolve(src, 'plugin.common.js'),
+            external,
             plugins: productionPlugins,
             output: {
                 format: 'cjs',
                 exports: 'named',
-                name: 'OverlayScrollbars',
+                name: 'OverlayScrollbarsVue',
                 file: path.resolve(dist, name + '.common.min.js'),
                 sourcemap: true
             },
         },
         {
             input: path.resolve(src, 'plugin.common.js'),
+            external,
             plugins: productionPlugins,
             output: {
                 format: 'umd',
                 exports: 'named',
-                name: 'OverlayScrollbars',
+                name: 'OverlayScrollbarsVue',
                 file: path.resolve(dist, name + '.min.js'),
                 sourcemap: true
             },
         },
         {
             input: path.resolve(src, 'plugin.js'),
+            external,
             plugins: productionESPlugins,
             output: {
                 format: 'es',
@@ -123,10 +130,11 @@ if (process.env.NODE_ENV === 'production') {
         },
         {
             input: path.resolve(src, 'OverlayScrollbars.js'),
+            external,
             plugins: productionPlugins,
             output: {
                 format: 'umd',
-                name: 'OverlayScrollbars',
+                name: 'OverlayScrollbarsVue',
                 file: path.resolve(base, 'overlay-scrollbars.js'),
                 // sourcemap: true
             },

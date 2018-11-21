@@ -43,6 +43,8 @@ You can also provide options
 </overlay-scrollbars>
 ```
 
+To access OverlayScrollbars instance and for example add extensions to it see this [example](https://codepen.io/H4M3D3/pen/qJYjWq)
+
 If you have discovered a 🐜 or have a feature suggestion, feel free to create an [issue](https://github.com/parsisolution/os-vue/issues) on Github.
 
 # License
