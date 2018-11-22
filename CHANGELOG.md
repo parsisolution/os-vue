@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/parsisolution/os-vue/compare/v1.1.0...v1.1.1) (2018-11-22)
+
+
+### Bug Fixes
+
+* Invalid default value for prop "options": Props with type Object/Array must use a factory function to return the default value. ([0f55dd9](https://github.com/parsisolution/os-vue/commit/0f55dd9))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/parsisolution/os-vue/compare/v1.0.1...v1.1.0) (2018-11-21)
 
