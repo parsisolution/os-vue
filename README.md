@@ -1,3 +1,6 @@
+this package is archived because release of the official version:
+https://github.com/KingSora/OverlayScrollbars/tree/master/packages/overlayscrollbars-vue
+
 # os-vue
 Overlay Scrollbars Vue Component
 
